@@ -4,7 +4,6 @@
         object-fit: contain;
         opacity: 0.79;
         background-color: $color-blurry;
-
         transition: all 1000ms linear;
 
     }
@@ -15,10 +14,8 @@
         height: 37px;
         -webkit-filter: blur(9px);
         filter: blur(9px);
-
         -webkit-animation: blurry-move-1 20s infinite;
         animation: blurry-move-1 20s infinite;
-
 
         @keyframes blurry-move-1 {
             0%,

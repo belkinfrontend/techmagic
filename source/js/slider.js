@@ -1,7 +1,6 @@
 $(document).ready(function () {
-
-		$('#mixedSlider').multislider({
-			duration: 750,
-			interval: 0
-		});
+    $('#mixedSlider').multislider({
+        duration: 750,
+        interval: 4000
+    });   
 });

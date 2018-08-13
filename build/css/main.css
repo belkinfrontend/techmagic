@@ -537,6 +537,14 @@ abbr, acronym {
   min-height: 100vh;
 }
 
+@media (min-width: 999px) {
+  .active {
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 14px 0 rgba(153, 153, 153, 0.5);
+    box-shadow: 0 2px 14px 0 rgba(153, 153, 153, 0.5);
+  }
+}
+
 a {
   color: #007672;
   font-size: 16px;
@@ -760,6 +768,9 @@ a {
   position: relative;
   top: 25vh;
   left: 17vw;
+  /*======================================
+        IE10+ CSS styles go here
+        =======================================*/
 }
 
 .home .main_text .line {
@@ -798,13 +809,13 @@ a {
 
 @media (max-width: 360px) {
   .home .main_text {
-    font-size: 42px;
+    font-size: 40px;
   }
 }
 
 @media (max-width: 320px) {
   .home .main_text {
-    font-size: 34px;
+    font-size: 30px;
   }
 }
 
@@ -813,6 +824,13 @@ a {
   background: linear-gradient(97deg, #007672, #00b8b2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .home .main_text span {
+    color: #007672;
+    background: transparent;
+  }
 }
 
 .home .ico_scroll_down {
@@ -1044,7 +1062,8 @@ a {
   overflow: hidden;
   height: 100%;
   white-space: normal;
-  padding: 0 10px;
+  padding: 16px 10px;
+  margin: 10px 0;
 }
 
 #mixedSlider .MS-content .item .quote {
@@ -1223,15 +1242,43 @@ a {
   object-fit: contain;
   opacity: 0.79;
   background-color: #d8d8d8;
+  background-size: 100%;
   -webkit-transition: all 1000ms linear;
   transition: all 1000ms linear;
+}
+
+/*======================================
+        IE10+ CSS styles go here
+        =======================================*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .blurry-1,
+  .blurry-2,
+  .blurry-3,
+  .blurry-4,
+  .blurry-5,
+  .blurry-6 {
+    background-image: url(../images/blurry.svg);
+    -webkit-filter: none;
+    filter: none;
+    background-color: transparent;
+  }
+  .blurry-2,
+  .blurry-3,
+  .blurry-5 {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .blurry-6 {
+    width: 90px !important;
+    height: 90px !important;
+  }
 }
 
 .blurry-1 {
   left: 9vw;
   width: 37px;
   height: 37px;
-  -webkit-filter: blur(9px);
+  -webkit-filter: blur(5.6px);
   filter: blur(9px);
   -webkit-animation: blurry-move-1 20s infinite;
   animation: blurry-move-1 20s infinite;
@@ -1292,25 +1339,45 @@ a {
 }
 
 .blurry-3 {
+  left: 28vw;
+  width: 18px;
+  height: 18px;
+  opacity: 0.79;
+  -webkit-filter: blur(4.6px);
+  filter: blur(4.6px);
+  -webkit-animation: blurry-move-3 21s infinite;
+  animation: blurry-move-3 21s infinite;
+}
+
+@-webkit-keyframes blurry-move-3 {
+  0%,
+  100% {
+    top: 66vh;
+  }
+  50% {
+    top: 20vh;
+  }
+}
+
+@keyframes blurry-move-3 {
+  0%,
+  100% {
+    top: 66vh;
+  }
+  50% {
+    top: 20vh;
+  }
+}
+
+.blurry-4 {
   left: 35vw;
   width: 58px;
   height: 58px;
   opacity: 0.79;
   -webkit-filter: blur(13.6px);
   filter: blur(13.6px);
-  background-color: #d8d8d8;
   -webkit-animation: blurry-move-3 15s infinite;
   animation: blurry-move-3 15s infinite;
-}
-
-@-webkit-keyframes blurry-move-3 {
-  0%,
-  100% {
-    top: 85vh;
-  }
-  50% {
-    top: 15vh;
-  }
 }
 
 @keyframes blurry-move-3 {
@@ -1323,7 +1390,7 @@ a {
   }
 }
 
-.blurry-4 {
+.blurry-5 {
   left: 44vw;
   width: 16px;
   height: 16px;
@@ -1353,10 +1420,10 @@ a {
   }
 }
 
-.blurry-5 {
+.blurry-6 {
   left: 50vw;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   -webkit-filter: blur(13.6px);
   filter: blur(13.6px);
   -webkit-animation: blurry-move-5 15s infinite;

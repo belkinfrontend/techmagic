@@ -1,19 +1,54 @@
     .blurry {
         position: absolute;
         z-index: 1;
+        -o-object-fit: contain;
         object-fit: contain;
-        opacity: 0.79;
+        opacity: 0.79; //border-radius: 50%;
         background-color: $color-blurry;
+        background-size: 100%;
+        -webkit-transition: all 1000ms linear;
+        -o-transition: all 1000ms linear;
         transition: all 1000ms linear;
 
+    }
+
+    /*======================================
+        IE10+ CSS styles go here
+        =======================================*/
+
+    @media screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
+        .blurry-1,
+        .blurry-2,
+        .blurry-3,
+        .blurry-4,
+        .blurry-5,
+        .blurry-6, {
+            background-image: url(../images/blurry.svg);
+            filter: none;
+            background-color: transparent;
+        }
+        
+        .blurry-2,
+        .blurry-3,
+        .blurry-5 {
+            width: 40px !important;
+            height: 40px !important;
+        }
+        .blurry-6 {
+            width: 90px !important;
+            height: 90px !important;
+        }
+        
     }
 
     .blurry-1 {
         left: 9vw;
         width: 37px;
         height: 37px;
-        -webkit-filter: blur(9px);
+        -webkit-filter: blur(5.6px);
         filter: blur(9px);
+
         -webkit-animation: blurry-move-1 20s infinite;
         animation: blurry-move-1 20s infinite;
 
@@ -35,12 +70,12 @@
         height: 16px;
         -webkit-filter: blur(5.6px);
         filter: blur(5.6px);
+
         -webkit-animation: blurry-move-2 20s infinite;
         animation: blurry-move-2 20s infinite;
 
         @keyframes blurry-move-2 {
-            0%
-             {
+            0% {
                 top: 50vh;
             }
 
@@ -54,13 +89,36 @@
     }
 
     .blurry-3 {
+        left: 28vw;
+        width: 18px;
+        height: 18px;
+        opacity: 0.79;
+        -webkit-filter: blur(4.6px);
+        filter: blur(4.6px);
+
+        -webkit-animation: blurry-move-3 21s infinite;
+        animation: blurry-move-3 21s infinite;
+
+        @keyframes blurry-move-3 {
+            0%,
+            100% {
+                top: 66vh;
+            }
+
+            50% {
+                top: 20vh;
+            }
+        }
+    }
+
+    .blurry-4 {
         left: 35vw;
         width: 58px;
         height: 58px;
         opacity: 0.79;
         -webkit-filter: blur(13.6px);
         filter: blur(13.6px);
-        background-color: #d8d8d8;
+
         -webkit-animation: blurry-move-3 15s infinite;
         animation: blurry-move-3 15s infinite;
 
@@ -76,12 +134,13 @@
         }
     }
 
-    .blurry-4 {
+    .blurry-5 {
         left: 44vw;
         width: 16px;
         height: 16px;
         -webkit-filter: blur(5.6px);
         filter: blur(5.6px);
+
         -webkit-animation: blurry-move-4 10s infinite;
         animation: blurry-move-4 10s infinite;
 
@@ -97,10 +156,10 @@
         }
     }
 
-    .blurry-5 {
+    .blurry-6 {
         left: 50vw;
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         -webkit-filter: blur(13.6px);
         filter: blur(13.6px);
         -webkit-animation: blurry-move-5 15s infinite;

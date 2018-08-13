@@ -117,7 +117,7 @@
             max-width: 70vw;
             left: 7vw;
         }
-        
+
         @media (max-width: 420px) {
             font-size: 49px;
 
@@ -127,20 +127,37 @@
 
         }
         @media (max-width: 360px) {
-            font-size: 42px;
+            font-size: 40px;
 
         }
 
         @media (max-width: 320px) {
-            font-size: 34px;
+            font-size: 30px;
 
         }
 
         span {
             display: block;
+            background: -webkit-linear-gradient(353deg, #007672, #00b8b2);
+            background: -o-linear-gradient(353deg, #007672, #00b8b2);
             background: linear-gradient(97deg, #007672, #00b8b2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
+
+
+        }
+
+        /*======================================
+        IE10+ CSS styles go here
+        =======================================*/
+        @media all and (-ms-high-contrast: none),
+        (-ms-high-contrast: active) {
+
+            span {
+                color: #007672;
+                background: transparent;
+            }
         }
     }
 

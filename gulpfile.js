@@ -9,6 +9,7 @@ const uglify = require("gulp-uglify");
 const concat = require("gulp-concat");
 const sourcemaps = require("gulp-sourcemaps");
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
 
 
 
@@ -48,6 +49,7 @@ gulp.task ('js', function () {
 	    'source/js/slider.js',
         'source/js/main.js',
     ])
+    .pipe(babel())
     .pipe(sourcemaps.init())
     .pipe(concat('main.min.js'))
     .pipe(uglify())
